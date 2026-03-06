@@ -47,3 +47,17 @@ chmod +x scripts/package-app.sh
 
 当前环境是 Windows，无法在本机直接编译或验收 macOS 二进制。
 源码已补齐，需在一台安装 Xcode Command Line Tools 的 Mac 上执行上述命令验证。
+
+## Gatekeeper 说明
+
+当前产物会做 **ad-hoc 签名**，但仍然不是 Apple notarized 正式包。
+
+如果下载后在 macOS 上看到“已损坏，无法打开”或类似拦截提示，可先尝试：
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/CLI截图桥.app"
+```
+
+若仍被拦截，再右键应用选择“打开”。
+
+如果后续要面向更广泛用户无门槛分发，需要 Apple Developer 签名与 notarization。

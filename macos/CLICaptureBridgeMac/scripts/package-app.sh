@@ -48,4 +48,7 @@ cat > "$PLIST_PATH" <<EOF
 </plist>
 EOF
 
+# Ad-hoc sign the app bundle so Gatekeeper is less likely to treat it as damaged.
+codesign --force --deep --sign - "$APP_DIR"
+
 echo "Packaged: $APP_DIR"
