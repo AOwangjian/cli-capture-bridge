@@ -1,0 +1,15 @@
+# Windows build artifacts
+bin/
+obj/
+
+# macOS Swift build artifacts
+macos/CLICaptureBridgeMac/.build/
+macos/CLICaptureBridgeMac/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
